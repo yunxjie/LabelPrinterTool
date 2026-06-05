@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>打印标签工具</title>
+    <link rel="stylesheet" href="./src/style.css" />
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="panel">
+            <h2>标签设置</h2>
+
+            <div class="form-group">
+                <label>标签宽度 (mm)</label>
+                <input id="labelWidth" type="number" value="60" min="10" />
+            </div>
+
+            <div class="form-group">
+                <label>标签高度 (mm)</label>
+                <input id="labelHeight" type="number" value="40" min="10" />
+            </div>
+
+            <div class="form-group">
+                <label>标签内容</label>
+                <textarea id="labelText" placeholder="请输入标签文字"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>文本对齐</label>
+                <select id="textAlign">
+                    <option value="left">左对齐</option>
+                    <option value="center" selected>居中对齐</option>
+                    <option value="right">右对齐</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>字体选择</label>
+                <select id="fontFamily">
+                    <option value="Microsoft YaHei" selected>微软雅黑</option>
+                    <option value="SimSun">宋体</option>
+                    <option value="SimHei">黑体</option>
+                    <option value="KaiTi">楷体</option>
+                    <option value="FangSong">仿宋</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>字体大小 (px)</label>
+                <input id="fontSize" type="number" value="18" min="8" max="100" />
+            </div>
+
+            <div class="form-group">
+                <label>打印记录保存路径</label>
+                <button id="choosePathBtn" type="button">选择保存路径</button>
+
+                <div id="currentPath" class="path-box">
+                    未选择保存路径
+                </div>
+            </div>
+
+            <button id="printBtn" type="button">打印标签</button>
+        </div>
+
+        <div class="preview-area">
+            <h2>标签预览</h2>
+
+            <div class="preview-box">
+                <div id="labelPreview" class="label-preview">
+                    标签预览
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./src/app.js"></script>
+</body>
+</html>

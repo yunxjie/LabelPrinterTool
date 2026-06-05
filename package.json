@@ -1,0 +1,40 @@
+{
+  "name": "label-printer-tool",
+  "version": "1.0.0",
+  "description": "Windows thermal label printer tool with mm label size and print history",
+  "main": "electron.js",
+  "author": "label-printer-tool",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis --x64"
+  },
+  "build": {
+    "appId": "com.local.labelprintertool",
+    "productName": "打印标签工具",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron.js",
+      "preload.js",
+      "index.html",
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "打印标签工具"
+    }
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  }
+}
